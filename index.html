@@ -65,6 +65,32 @@
     .faq summary { cursor:pointer; font-weight:600; }
     .notice { background: #0a1c2f; border:1px dashed #1f9bd1; padding:12px 14px; border-radius:12px; color:#bde6ff; }
     .kicker { font-size:12px; letter-spacing:1px; color:#9bd8ff; text-transform:uppercase; }
+    #blog {
+  margin: 2rem auto;
+  max-width: 900px;
+  padding: 2rem;
+}
+
+.blog-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.blog-post {
+  padding: 1.25rem;
+  border-radius: 16px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+}
+
+.blog-post h3 {
+  margin-top: 0;
+}
+
+.muted {
+  color: #6b7280;
+  font-size: 0.95rem;
+}
   </style>
 </head>
 <body>
@@ -235,27 +261,17 @@
       </div>
     </section>
     
-<section id="blog">
-  <div class="card">
+<section id="blog" class="card">
   <h2>Blog</h2>
-  <article class="blog-post">
-    <h3>Getting Started with VEX IQ</h3>
-    <p class="date">May 2026</p>
-    <p>
-      Notes from our robotics journey: what kids are learning, how student-led building works,
-      and how families can support curiosity at home.
-    </p>
-    <a href="blog/getting-started-with-vex-iq.html">Read more</a>
-  </article>
-
-  <article class="blog-post">
-    <h3>What Makes Robotics Great for 5th Graders?</h3>
-    <p class="date">May 2026</p>
-    <p>
-      A short reflection on teamwork, problem-solving, design thinking, and learning through iteration.
-    </p>
-    <a href="blog/robotics-for-5th-graders.html">Read more</a>
-  </article>
+  <div class="blog-list">
+    <article class="blog-post">
+      <h3>Getting Started with VEX IQ</h3>
+      <p class="muted">May 2026</p>
+      <p>
+        Notes from our robotics journey, what kids are learning, and how families can support curiosity at home.
+      </p>
+      <a href="blog/">Read more →</a>
+    </article>
   </div>
 </section>
     
