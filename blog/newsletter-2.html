@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fairmeadow Robotics Newsletter #2</title>
+
+  <style>
+    :root {
+      --bg: #0b1020;
+      --card: #11172b;
+      --text: #e6edf6;
+      --muted: #b7c0d6;
+      --primary: #22d3ee;
+      --accent: #a78bfa;
+      --ring: #22d3ee33;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .section { padding: 24px 20px; }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 16px 20px; }
+
+    .card {
+      background: linear-gradient(180deg, #131a31, #0f162b);
+      border: 1px solid #1f2a49;
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 10px 30px #0008;
+    }
+
+    h1 {
+      font-size: clamp(30px, 5vw, 48px);
+      line-height: 1.1;
+      margin: 8px 0 12px;
+    }
+
+    h2 {
+      font-size: clamp(22px, 3.5vw, 30px);
+      margin: 34px 0 10px;
+    }
+
+    h3 {
+      font-size: 20px;
+      margin: 24px 0 8px;
+    }
+
+    .lead {
+      font-size: 18px;
+      color: var(--muted);
+    }
+
+    .muted {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .kicker {
+      font-size: 12px;
+      letter-spacing: 1px;
+      color: #9bd8ff;
+      text-transform: uppercase;
+    }
+
+    .img-frame {
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid #21335a;
+      background: #0d152b;
+      margin: 20px 0;
+    }
+
+    .img-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .two-col {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (max-width: 900px) {
+      .two-col { grid-template-columns: 1fr; }
+    }
+
+    blockquote {
+      margin: 28px 0;
+      padding: 18px 22px;
+      border-left: 4px solid var(--primary);
+      background: #0a1c2f;
+      color: #d8ecff;
+      border-radius: 12px;
+    }
+
+    ul { margin-top: 8px; }
+    li { margin: 6px 0; }
+  </style>
+</head>
+
+<body>
+  <main>
+    <section class="section">
+      <div class="wrap">
+        <div class="card">
+
+          <p><a href="../index.html#blog">← Back to Blog</a></p>
+
+          <span class="kicker">Monthly Newsletter</span>
+          <h1>Fairmeadow Robotics Newsletter #2</h1>
+
+          <p class="lead">
+            An update from our friendly neighborhood Fairmeadow Robotics Team.
+          </p>
+
+          <p class="muted">By Manisha Verma. Mar 22, 2026</p>
+
+          <div class="img-frame">
+            <img src="../images/newsletter-2-cover.jpg" alt="Fairmeadow Robotics Newsletter #2 cover image" />
+          </div>
+
+          <h2>From Building to Presenting</h2>
+
+          <p>
+            Before the 2025 year ended, we had a demo day where the girls practiced presenting their robotics work.
+          </p>
+
+          <ul>
+            <li>Demonstrated how they use the controller to drive and operate the robot</li>
+            <li>Walked through the programming blocks on the laptop</li>
+            <li>Explained what different parts of the robot do</li>
+            <li>Discussed how the robot moves and how attachments like the claw or lift work</li>
+            <li>Practiced presenting their work in front of others</li>
+          </ul>
+
+          <p>
+            This is an important step because robotics competitions are not just about building a robot. They also require
+            explaining design decisions, walking through code, reflecting on what worked and what did not, and presenting
+            ideas as a team.
+          </p>
+
+          <h2>Our Workshop</h2>
+
+          <div class="two-col">
+            <div>
+              <div class="img-frame">
+                <img src="../images/newsletter-2-demo-day.jpg" alt="Students presenting their clawbot on demo day" />
+              </div>
+              <h3>Demo Day</h3>
+              <p class="muted">Year-end demonstration of the clawbot.</p>
+            </div>
+
+            <div>
+              <div class="img-frame">
+                <img src="../images/newsletter-2-bot-action.jpg" alt="Clawbot in action" />
+              </div>
+              <h3>Bot in Action</h3>
+              <p class="muted">Clawbot with a 180-degree pick-and-turn motion.</p>
+            </div>
+          </div>
+
+          <h2>Welcome to the New Year</h2>
+
+          <p>
+            We kicked off the new year by reinforcing one of the most important and often overlooked skills in robotics:
+            understanding what you have already built.
+          </p>
+
+          <p>
+            Before jumping into new builds, the girls revisited the Clawbot design by reconstructing it from memory.
+          </p>
+
+          <ul>
+            <li>Took detailed notes</li>
+            <li>Drew structural diagrams</li>
+            <li>Broke down the robot into its core components</li>
+          </ul>
+
+          <p>
+            This exercise helps build a strong engineering foundation, because great builders do not just assemble — they understand.
+          </p>
+
+          <div class="img-frame">
+            <img src="../images/newsletter-2-engineering-drawing.jpg" alt="Engineering notebook sketch of a robot" />
+          </div>
+
+          <h2>Engineering Design in Action</h2>
+
+          <p>
+            One of the core elements of competitions like VEX is the Engineering Design Notebook — a place where ideas,
+            iterations, and learnings are captured. The girls took a step in that direction by documenting designs,
+            visualizing structures, and thinking critically about why things work.
+          </p>
+
+          <div class="img-frame">
+            <img src="../images/newsletter-2-notebook.jpg" alt="Students writing in engineering notebooks" />
+          </div>
+
+          <div class="img-frame">
+            <img src="../images/newsletter-2-workshop-table.jpg" alt="Students working together at the robotics table" />
+          </div>
+
+          <h2>Build Progress: From Subsystems to Systems</h2>
+
+          <p>
+            February and March were all about building core mechanical subsystems that will later come together into a
+            complete robot.
+          </p>
+
+          <ul>
+            <li><strong>Four-Bar Lift:</strong> Enables vertical motion and lifting capability</li>
+            <li><strong>Basebot:</strong> Provides mobility and structure</li>
+            <li><strong>Crawlbot:</strong> Explores alternative movement mechanisms</li>
+          </ul>
+
+          <p>
+            Each of these represents a building block in robotics design. The team also began working toward integrating
+            components into a single unified robot body.
+          </p>
+
+          <h2>Science Fair Kick-off</h2>
+
+          <p>
+            We are excited that the girls are preparing for the upcoming Science Fair on March 26.
+          </p>
+
+          <h3>Team PickBot</h3>
+          <p><strong>Team members:</strong> Aimee and Vibhi</p>
+          <p>
+            Focus: building and iterating on a Four-Bar Lift mechanism, refining performance, improving stability and
+            control, and preparing a demo.
+          </p>
+
+          <h3>Team FunBot</h3>
+          <p><strong>Team members:</strong> Anushka and Amarya</p>
+
+          <p>Mission ideas included:</p>
+
+          <ul>
+            <li><strong>Ball Line Challenge:</strong> collect 10 ping-pong balls, transport them, and deposit them using a claw or flap</li>
+            <li><strong>Soccer Goal Challenge:</strong> navigate autonomously and push a ball into a goal within a defined boundary</li>
+          </ul>
+
+          <p>
+            Team FunBot will present at the Science Fair. Their progress so far reflects a full progression from
+            ideation to design to execution.
+          </p>
+
+          <blockquote>
+            “If you can draw it, you understand it. If you can improve it, you’ve become an engineer.”
+            <br />
+            <span class="muted">— Manisha’s Gemini-aided quote</span>
+          </blockquote>
+
+          <div class="img-frame">
+            <img src="../images/newsletter-2-kit-organization.jpg" alt="Students organizing the second VEX IQ kit" />
+          </div>
+
+          <p>
+            One milestone this month was the addition of a second VEX IQ kit. The girls spent one session organizing
+            parts into neat locations. Organization is key for ease of locating and building parts, especially during
+            live competitions.
+          </p>
+
+          <h2>What’s Next?</h2>
+
+          <ul>
+            <li>Integrating subsystems into full robots</li>
+            <li>Iterating on Science Fair projects</li>
+            <li>Practicing demonstrations and storytelling</li>
+            <li>Strengthening engineering notebooks</li>
+          </ul>
+
+          <div class="img-frame">
+            <img src="../images/newsletter-2-whats-next.jpg" alt="Students working with robotics kits on the floor" />
+          </div>
+
+          <h2>Throwback to Classroom Learnings</h2>
+
+          <h3>Clawbot for Beginners</h3>
+          <p>The girls built advanced clawbots from scratch.</p>
+
+          <div class="img-frame">
+            <img src="../images/newsletter-2-clawbot.jpg" alt="Student watching a clawbot lesson" />
+          </div>
+
+          <h3>Four-Bar Lifts</h3>
+          <p>The girls assembled a four-bar lift.</p>
+
+          <h2>Focus Area: Intake Mechanisms</h2>
+
+          <p>
+            Looking ahead to competitions, we are beginning to focus on one of the most important concepts in VEX IQ
+            robotics: intake mechanisms.
+          </p>
+
+          <p>
+            A typical competition robot includes three key subsystems:
+          </p>
+
+          <ul>
+            <li><strong>Intake:</strong> collect objects</li>
+            <li><strong>Collection / Storage:</strong> hold objects securely</li>
+            <li><strong>Dumping / Scoring:</strong> deliver objects to the goal</li>
+          </ul>
+
+          <p>
+            We are starting simple with basic intake designs, motion and control, and reliability testing. Over the next
+            month, we will increase complexity by introducing multi-stage systems, better control and efficiency, and
+            integration with full robot builds.
+          </p>
+
+          <div class="img-frame">
+            <img src="../images/newsletter-2-intake.jpg" alt="Students working on early intake mechanism designs" />
+          </div>
+
+          <h2>Preparing for Competitions</h2>
+
+          <p>
+            We are beginning early exposure to real-world robotics competitions. We plan to organize visits to VEX IQ
+            regional competitions across the Bay Area, including events at Gunn High School.
+          </p>
+
+          <p>
+            Parent support is welcome for coordinating visits and carpooling.
+          </p>
+
+          <div class="img-frame">
+            <img src="../images/newsletter-2-competition-prep.jpg" alt="Students learning about robotics competitions" />
+          </div>
+
+          <h2>Thank You</h2>
+
+          <p>
+            Thank you for being a part of this journey. It is incredible to see the girls grow — not just as builders,
+            but as thinkers, collaborators, and creators.
+          </p>
+
+          <div class="img-frame">
+            <img src="../images/newsletter-2-team.jpg" alt="Fairmeadow Robotics team photo" />
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
