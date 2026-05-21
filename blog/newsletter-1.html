@@ -5,6 +5,71 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Fairmeadow Robotics Newsletter #1</title>
   <link rel="stylesheet" href="../style.css" />
+  <style>
+    :root {
+      --bg: #0b1020;          /* deep navy */
+      --card: #11172b;        /* slightly lighter */
+      --text: #e6edf6;        /* off‑white */
+      --muted: #b7c0d6;       /* muted text */
+      --primary: #22d3ee;     /* cyan */
+      --accent: #a78bfa;      /* purple */
+      --pill: #0ea5e9;        /* sky */
+      --ring: #22d3ee33;      /* subtle */
+    }
+    * { box-sizing: border-box; }
+    html, body { margin:0; padding:0; background: var(--bg); color: var(--text); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; line-height: 1.6; }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      position: sticky; top: 0; z-index: 50; backdrop-filter: blur(10px);
+      background: linear-gradient(180deg, #0b1020cc 0%, #0b102000 100%);
+      border-bottom: 1px solid #1e263f;
+    }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 16px 20px; }
+    .brand { display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:0.2px; }
+    .brand .dot { width:10px; height:10px; border-radius:999px; background:linear-gradient(135deg, var(--primary), var(--accent)); box-shadow:0 0 12px var(--ring); }
+    nav { display:flex; gap:18px; flex-wrap:wrap; }
+    .nav-row { display:flex; align-items:center; justify-content:space-between; gap:16px; }
+    .cta { display:inline-block; padding:10px 16px; border-radius:999px; background: linear-gradient(135deg, var(--primary), var(--accent)); color:#06121f; font-weight:800; box-shadow:0 6px 24px #0007; }
+    .cta:hover { transform: translateY(-1px); text-decoration:none; }
+
+    .hero { padding: 56px 20px 20px; }
+    .grid { display:grid; gap:24px; grid-template-columns: 1.1fr 0.9fr; }
+    @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+    .card { background: linear-gradient(180deg, #131a31, #0f162b); border:1px solid #1f2a49; border-radius: 20px; padding: 20px; box-shadow: 0 10px 30px #0008; }
+    h1 { font-family: Nunito, Inter, system-ui; font-weight: 900; font-size: clamp(28px, 5vw, 48px); line-height:1.1; margin: 0 0 12px; }
+    h2 { font-size: clamp(22px, 3.5vw, 28px); margin: 24px 0 10px; }
+    h3 { font-size: 20px; margin: 20px 0 8px; }
+    p.lead { font-size: clamp(16px, 2.2vw, 18px); color: var(--muted); }
+    ul { margin: 10px 0 0 18px; }
+    li { margin: 6px 0; }
+    .tag { display:inline-flex; align-items:center; gap:8px; background:#0f2741; color:#a7d0ff; border:1px solid #1d4166; border-radius:999px; padding:6px 10px; font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.6px; }
+    .pill-row { display:flex; gap:10px; flex-wrap:wrap; margin-top:12px; }
+    .img-frame { border-radius: 16px; overflow: hidden; border:1px solid #21335a; background:#0d152b; }
+    .img-frame img { width: 100%; height: auto; display:block; aspect-ratio: 16/10; object-fit: cover; }
+    .section { padding: 10px 20px; }
+    .section .wrap { padding: 36px 20px; }
+    .two-col { display:grid; gap:20px; grid-template-columns: 1fr 1fr; }
+    @media (max-width: 900px){ .two-col { grid-template-columns: 1fr; } }
+    .foot { color:#9db0d8; border-top:1px solid #1e2b4f; padding: 18px 0 28px; font-size:14px; }
+    .muted { color: var(--muted); }
+    .faq details { background:#0e1630; border:1px solid #21335a; border-radius:14px; padding:14px 16px; margin:12px 0; }
+    .faq summary { cursor:pointer; font-weight:600; }
+    .notice { background: #0a1c2f; border:1px dashed #1f9bd1; padding:12px 14px; border-radius:12px; color:#bde6ff; }
+    .kicker { font-size:12px; letter-spacing:1px; color:#9bd8ff; text-transform:uppercase; }
+    .blog-post {
+  margin-top: 12px;
+}
+
+.blog-post h3 {
+  margin-top: 0;
+}
+
+.blog-post .muted {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+</style>
 </head>
 
 <body>
