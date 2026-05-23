@@ -46,7 +46,12 @@
     .tag { display:inline-flex; align-items:center; gap:8px; background:#0f2741; color:#a7d0ff; border:1px solid #1d4166; border-radius:999px; padding:6px 10px; font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.6px; }
     .pill-row { display:flex; gap:10px; flex-wrap:wrap; margin-top:12px; }
     .img-frame { border-radius: 16px; overflow: hidden; border:1px solid #21335a; background:#0d152b; }
-    .img-frame img { width: 100%; height: auto; display:block; aspect-ratio: 16/10; object-fit: cover; }
+    .img-frame img { width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      aspect-ratio: auto;
+    }
     .section { padding: 10px 20px; }
     .section .wrap { padding: 36px 20px; }
     .two-col { display:grid; gap:20px; grid-template-columns: 1fr 1fr; }
