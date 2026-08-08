@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>August Robotics Workshop | Palo Alto Robotics</title>
+
+  <meta name="description"
+        content="A two-day hands-on VEX IQ robotics workshop for students entering Grades 5–6 in Palo Alto. August 29–30, 2026.">
+
+  <style>
+    :root {
+      --bg: #080d19;
+      --panel: #10182b;
+      --panel2: #0d1527;
+      --text: #edf5ff;
+      --muted: #a8b5c9;
+      --primary: #22d3ee;
+      --accent: #a78bfa;
+      --border: #243653;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                   Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .wrap {
+      width: min(1080px, calc(100% - 40px));
+      margin: auto;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(8, 13, 25, 0.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      color: var(--text);
+      font-weight: 800;
+      letter-spacing: 0.2px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    /* BUTTONS */
+
+    .cta {
+      display: inline-block;
+      padding: 11px 19px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #07101c !important;
+      font-weight: 800;
+      text-decoration: none !important;
+      box-shadow: 0 5px 22px rgba(34, 211, 238, 0.16);
+    }
+
+    .cta:hover {
+      transform: translateY(-1px);
+    }
+
+    .secondary-cta {
+      display: inline-block;
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: 1px solid #425676;
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 85px 0 60px;
+      background:
+        radial-gradient(circle at 85% 15%, rgba(34,211,238,.12), transparent 30%),
+        radial-gradient(circle at 10% 90%, rgba(167,139,250,.12), transparent 35%);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 7px 13px;
+      border-radius: 999px;
+      background: #0e2740;
+      border: 1px solid #1c4969;
+      color: #9ceaff;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      max-width: 900px;
+      margin: 0 0 22px;
+      font-size: clamp(42px, 6vw, 72px);
+      line-height: 1.06;
+      letter-spacing: -2px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-lead {
+      max-width: 760px;
+      font-size: 21px;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .hero-details {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 28px 0 32px;
+    }
+
+    .hero-details span {
+      padding: 7px 12px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: rgba(13, 25, 44, .8);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    /* CONTENT */
+
+    section.content {
+      padding: 65px 0;
+    }
+
+    section.alt {
+      background: #0b1120;
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: clamp(29px, 4vw, 42px);
+      line-height: 1.15;
+    }
+
+    h3 {
+      margin-top: 0;
+      font-size: 21px;
+    }
+
+    .intro {
+      max-width: 820px;
+      font-size: 18px;
+      color: var(--muted);
+    }
+
+    .big-question {
+      max-width: 800px;
+      margin: 32px 0;
+      padding: 26px 30px;
+      border-left: 4px solid var(--primary);
+      background: var(--panel);
+      border-radius: 0 16px 16px 0;
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .learning-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 30px;
+    }
+
+    .learning-card {
+      padding: 23px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+    }
+
+    .learning-card .icon {
+      display: block;
+      font-size: 27px;
+      margin-bottom: 9px;
+    }
+
+    .learning-card p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    /* WORKSHOP FACTS */
+
+    .details-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .detail {
+      padding: 20px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+
+    .detail-label {
+      display: block;
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .8px;
+      margin-bottom: 5px;
+    }
+
+    .detail-value {
+      font-weight: 700;
+      font-size: 17px;
+    }
+
+    /* SCHEDULE */
+
+    .schedule-wrap {
+      overflow-x: auto;
+      margin-top: 30px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+    }
+
+    table {
+      width: 100%;
+      min-width: 760px;
+      border-collapse: collapse;
+      background: var(--panel);
+    }
+
+    th {
+      background: #142039;
+      color: var(--primary);
+      text-align: left;
+      padding: 16px;
+      font-size: 14px;
+    }
+
+    td {
+      padding: 15px 16px;
+      border-top: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    td:first-child {
+      white-space: nowrap;
+      font-weight: 700;
+      color: #c9d9ec;
+    }
+
+    tr:hover td {
+      background: #111c31;
+    }
+
+    /* COST */
+
+    .cost-box {
+      margin-top: 35px;
+      padding: 28px;
+      border: 1px solid #365475;
+      border-radius: 18px;
+      background:
+        radial-gradient(circle at top right, rgba(167,139,250,.12), transparent 35%),
+        var(--panel);
+    }
+
+    .cost {
+      font-size: 34px;
+      font-weight: 800;
+      margin: 5px 0;
+    }
+
+    /* FINAL CTA */
+
+    .final-cta {
+      padding: 70px 0;
+      text-align: center;
+      background:
+        radial-gradient(circle at center, rgba(34,211,238,.10), transparent 50%);
+    }
+
+    .final-cta p {
+      max-width: 700px;
+      margin: 0 auto 28px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    footer {
+      padding: 30px 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 750px) {
+      .learning-grid,
+      .details-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links .hide-mobile {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 55px;
+      }
+
+      h1 {
+        letter-spacing: -1px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html">Palo Alto Robotics</a>
+
+    <div class="nav-links">
+      <a class="hide-mobile" href="index.html">Home</a>
+      <a class="hide-mobile" href="#schedule">Schedule</a>
+      <a class="cta"
+         href="https://docs.google.com/forms/d/e/1FAIpQLSfWB237MQvZk0yxGfJ1SVZCKwoU4TwKv__ujpp7uWjtK50jhA/viewform?usp=dialog"
+         target="_blank"
+         rel="noopener">
+        Register
+      </a>
+    </div>
+  </div>
+</nav>
+
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+
+    <span class="badge">🚀 AUGUST 29–30 · PALO ALTO</span>
+
+    <h1>
+      Have your kid build their first robot.
+      <span class="gradient-text">Have them think like an engineer while at it.</span>
+    </h1>
+
+    <p class="hero-lead">
+      A special two-day, hands-on introduction to robotics for students
+      entering Grades 5 and 6. Build. Experiment. Test. Improve.
+    </p>
+
+    <div class="hero-details">
+      <span>📅 Aug 29–30, 2026</span>
+      <span>🕘 9:30 AM–4:00 PM</span>
+      <span>📍 Palo Alto</span>
+      <span>👩‍🔧 Grades 5–6</span>
+      <span>👥 Only 6 students</span>
+      <span>🤖 No experience needed</span>
+    </div>
+
+    <a class="cta"
+       href="https://docs.google.com/forms/d/e/1FAIpQLSfWB237MQvZk0yxGfJ1SVZCKwoU4TwKv__ujpp7uWjtK50jhA/viewform?usp=dialog"
+       target="_blank"
+       rel="noopener">
+      Register / Express Interest →
+    </a>
+
+  </div>
+</header>
+
+
+<!-- WHY -->
+<section class="content">
+  <div class="wrap">
+
+    <h2>What does it mean to think like an engineer?</h2>
+
+    <p class="intro">
+      What do Amazon warehouse robots, Mars rovers, surgical robots and
+      self-driving cars all have in common?
+    </p>
+
+    <div class="big-question">
+      Behind every one of them is an engineer who started by asking a
+      simple question: “How can I solve this problem?”
+    </div>
+
+    <p class="intro">
+      This August, we're opening our robotics studio for a special two-day
+      hands-on workshop. Students will work in small teams to learn the
+      foundations of robotics and then put those ideas into practice by
+      designing, building and improving their own robots.
+    </p>
+
+  </div>
+</section>
+
+
+<!-- WHAT THEY'LL DO -->
+<section class="content alt">
+  <div class="wrap">
+
+    <h2>Over one exciting weekend...</h2>
+
+    <div class="learning-grid">
+
+      <div class="learning-card">
+        <span class="icon">🤖</span>
+        <h3>Build & Drive</h3>
+        <p>Build a working robot and learn how its major components work together.</p>
+      </div>
+
+      <div class="learning-card">
+        <span class="icon">⚙️</span>
+        <h3>Learn the Mechanics</h3>
+        <p>Explore motors, gears, sensors, the robot brain and basic mechanical principles.</p>
+      </div>
+
+      <div class="learning-card">
+        <span class="icon">🔄</span>
+        <h3>Design an Intake</h3>
+        <p>Build a real intake mechanism inspired by competitive robotics.</p>
+      </div>
+
+      <div class="learning-card">
+        <span class="icon">📓</span>
+        <h3>Document Ideas</h3>
+        <p>Learn to use an engineering notebook to sketch, document and improve designs.</p>
+      </div>
+
+      <div class="learning-card">
+        <span class="icon">🧪</span>
+        <h3>Test & Improve</h3>
+        <p>Discover the engineering cycle: build, test, fail, rethink and improve.</p>
+      </div>
+
+      <div class="learning-card">
+        <span class="icon">🎥</span>
+        <h3>Explain Their Work</h3>
+        <p>Present what they built and learned to family and friends through recorded videos.</p>
+      </div>
+
+    </div>
+
+    <p class="intro" style="margin-top:35px;">
+      Our workshops emphasize <strong>creativity, curiosity and engineering
+      thinking</strong> — not simply following instructions.
+    </p>
+
+    <p class="intro">
+      The program is based on the curriculum we've developed over the past
+      year with our Fairmeadow Robotics Team, whose students have progressed
+      from beginner robot builds to designing more advanced mechanisms
+      inspired by VEX robots.
+    </p>
+
+    <p><strong>No previous robotics experience is required.</strong></p>
+
+  </div>
+</section>
+
+
+<!-- DETAILS -->
+<section class="content">
+  <div class="wrap">
+
+    <h2>Workshop Details</h2>
+
+    <div class="details-grid">
+
+      <div class="detail">
+        <span class="detail-label">Who</span>
+        <span class="detail-value">Students entering Grades 5–6</span>
+      </div>
+
+      <div class="detail">
+        <span class="detail-label">Group Size</span>
+        <span class="detail-value">Limited to 6 students</span>
+      </div>
+
+      <div class="detail">
+        <span class="detail-label">When</span>
+        <span class="detail-value">August 29–30, 2026</span>
+      </div>
+
+      <div class="detail">
+        <span class="detail-label">Hours</span>
+        <span class="detail-value">9:30 AM–4:00 PM</span>
+      </div>
+
+      <div class="detail">
+        <span class="detail-label">Location</span>
+        <span class="detail-value">Our home studio in Palo Alto</span>
+      </div>
+
+      <div class="detail">
+        <span class="detail-label">Experience</span>
+        <span class="detail-value">Beginners welcome</span>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- SCHEDULE -->
+<section id="schedule" class="content alt">
+  <div class="wrap">
+
+    <h2>Weekend at a Glance</h2>
+
+    <p class="intro">
+      Saturday establishes the foundations. On Sunday, we shift from
+      following instructions to solving an engineering problem.
+    </p>
+
+    <div class="schedule-wrap">
+      <table>
+
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Saturday — Build the Foundations</th>
+            <th>Sunday — Think Like an Engineer</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td>9:30–10:00</td>
+            <td>Welcome & <strong>What Makes a Robot?</strong></td>
+            <td><strong>Reverse Engineering:</strong> How Does Our Robot Work?</td>
+          </tr>
+
+          <tr>
+            <td>10:00–11:00</td>
+            <td><strong>Meet the Parts:</strong> Motors, Gears, Sensors & Brain</td>
+            <td><strong>Design Challenge:</strong> Brainstorm & Sketch</td>
+          </tr>
+
+          <tr>
+            <td>11:00–12:30</td>
+            <td><strong>Build Your First Robot:</strong> BaseBot</td>
+            <td><strong>Build an Intake:</strong> Rollers, Friction & Traction</td>
+          </tr>
+
+          <tr>
+            <td>12:30–1:15</td>
+            <td>Lunch</td>
+            <td>Lunch</td>
+          </tr>
+
+          <tr>
+            <td>1:15–2:30</td>
+            <td><strong>Build a Claw:</strong> Grabbing & Lifting</td>
+            <td><strong>Test, Fail, Improve:</strong> Engineering Iteration</td>
+          </tr>
+
+          <tr>
+            <td>2:30–3:30</td>
+            <td><strong>Robot Challenge:</strong> Drive, Pick Up & Move</td>
+            <td><strong>Robot Challenge:</strong> Put the Design to Work</td>
+          </tr>
+
+          <tr>
+            <td>3:30–4:00</td>
+            <td><strong>Engineering Notebook:</strong> Draw & Document</td>
+            <td><strong>Demo Day:</strong> Team Presentations + Parents Welcome</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+
+    <div class="cost-box">
+      <span class="detail-label">Workshop Contribution</span>
+      <div class="cost">$50</div>
+
+      <p>
+        We're keeping costs low and ask for a $50 contribution to cover
+        food, snacks and the cost of equipment use.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="wrap">
+
+    <h2>Ready to build?</h2>
+
+    <p>
+      Spaces are intentionally limited to six students so that every child
+      receives plenty of individual guidance. If your child loves building,
+      creating, solving puzzles — or simply wants to discover what robotics
+      is all about — we'd love to have them join us.
+    </p>
+
+    <a class="cta"
+       href="https://docs.google.com/forms/d/e/1FAIpQLSfWB237MQvZk0yxGfJ1SVZCKwoU4TwKv__ujpp7uWjtK50jhA/viewform?usp=dialog"
+       target="_blank"
+       rel="noopener">
+      Register / Express Interest →
+    </a>
+
+    <p style="margin-top:28px;">
+      We look forward to building with you!<br>
+      <strong style="color:var(--text);">Manisha Verma</strong>
+    </p>
+
+  </div>
+</section>
+
+
+<footer>
+  <div class="wrap">
+    <a href="index.html">← Back to Palo Alto Robotics</a>
+  </div>
+</footer>
+
+</body>
+</html>
