@@ -14,6 +14,109 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Nunito:wght@700;900&display=swap" rel="stylesheet">
   <style>
+    /* ---------- August Robotics Workshop ---------- */
+
+.workshop-feature {
+  padding: 28px 20px 8px;
+}
+
+.workshop-card {
+  position: relative;
+  overflow: hidden;
+  padding: 36px 40px;
+  border-radius: 24px;
+
+  background:
+    radial-gradient(circle at top right, #22d3ee22, transparent 35%),
+    radial-gradient(circle at bottom left, #a78bfa22, transparent 35%),
+    linear-gradient(135deg, #131a31, #0f162b);
+
+  border: 1px solid #2a4b70;
+  box-shadow: 0 12px 40px #0008;
+}
+
+.workshop-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 16px;
+
+  border-radius: 999px;
+  background: #0f2741;
+  border: 1px solid #1d4166;
+
+  color: #9bd8ff;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.workshop-card h1 {
+  max-width: 760px;
+  margin-bottom: 16px;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.workshop-lead {
+  max-width: 760px;
+  color: var(--muted);
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.workshop-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 850px;
+  margin: 20px 0 26px;
+}
+
+.workshop-facts span {
+  padding: 7px 11px;
+  border-radius: 10px;
+  background: #0b2038;
+  border: 1px solid #1d4166;
+  color: #d8eaff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.workshop-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.secondary-cta {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid #34466c;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.secondary-cta:hover {
+  border-color: var(--primary);
+  text-decoration: none;
+}
+
+@media (max-width: 700px) {
+  .workshop-card {
+    padding: 26px 22px;
+  }
+
+  .workshop-lead {
+    font-size: 16px;
+  }
+}
     :root {
       --bg: #0b1020;          /* deep navy */
       --card: #11172b;        /* slightly lighter */
@@ -92,12 +195,66 @@
         <a href="#coach">Coach</a>
         <a href="#faq">FAQ</a>
         <a href="#blog">Blog</a>
-        <a class="cta" href="#join">Join Us</a>
+        <a href="#august-workshop">August Workshop</a>
+        <a class="cta" href="#august-workshop">Register</a>
       </nav>
     </div>
   </header>
 
   <main>
+<!-- AUGUST ROBOTICS WORKSHOP -->
+<section id="august-workshop" class="workshop-feature">
+  <div class="wrap">
+
+    <div class="workshop-card">
+
+      <div class="workshop-copy">
+
+        <span class="workshop-badge">
+          🚀 AUGUST SPECIAL WORKSHOP
+        </span>
+
+        <h1>
+          Build Your First Robot.<br>
+          <span class="gradient-text">Think Like an Engineer.</span>
+        </h1>
+
+        <p class="workshop-lead">
+          A two-day, hands-on introduction to robotics for students
+          entering Grades 5–6. Kids will build, test, improve and
+          present their own VEX IQ robots.
+        </p>
+
+        <div class="workshop-facts">
+          <span>📅 August XX–XX</span>
+          <span>🕘 9:30 AM–4:00 PM</span>
+          <span>📍 Palo Alto</span>
+          <span>👩‍🔧 Grades 5–6</span>
+          <span>🤖 Beginners Welcome</span>
+          <span>👥 Only 10–15 spots</span>
+        </div>
+
+        <div class="workshop-actions">
+          <a class="cta"
+             href="YOUR-REGISTRATION-FORM-URL"
+             target="_blank"
+             rel="noopener">
+             Register for the Workshop →
+          </a>
+
+          <a class="secondary-cta" href="#workshop-schedule">
+             See the Weekend Plan
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Existing homepage hero continues here -->
     <section class="hero">
       <div class="wrap grid">
         <div class="card">
